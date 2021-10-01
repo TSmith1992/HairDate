@@ -1,14 +1,29 @@
 import React, { useState } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 
-function Signup({ setCurrentUser }) {
+function SignupStylist({ setCurrentUser }) {
   const history = useHistory()
+  const [stylist, setStylist] = useState(false)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [passwordConfirmation, setPasswordConfirmation] = useState('')
+
+  function stylistOrClient(e){
+    e.preventDefault()
+    if (e.target.name !='stylist'){
+      setStylist(true)
+    // } elsif (e.target.name =='client'){
+    //   setStylist(false)
+     }
+    console.log(e.target.name)
+
+
+
+
+  }
   
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  function handleSubmit(e){
+    e.preventDefault()
     fetch('/signup', {
       method: 'POST',
       headers: {
@@ -43,7 +58,7 @@ function Signup({ setCurrentUser }) {
           <label 
             htmlFor="username"
           >
-            Username
+            Username STYLIST
           </label>
           <input
             type="text"
@@ -78,6 +93,11 @@ function Signup({ setCurrentUser }) {
             onChange={(e) => setPasswordConfirmation(e.target.value)}
           />
         </p>
+        <button name="stylist" onClick={stylistOrClient}>I am registering as a Stylist</button> 
+        <button name="client" onClick={stylistOrClient}>I am registering as a Client</button>
+        {/* {setStylist? 
+        <>stylist</>:<>client</>
+        } */}
         <p><button type="submit">Sign Up</button></p>
         <p>-- or --</p>
         <p><Link to="/">Log In</Link></p>
@@ -86,4 +106,4 @@ function Signup({ setCurrentUser }) {
   )
 }
 
-export default Signup
+export default SignupStylist

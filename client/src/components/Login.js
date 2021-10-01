@@ -61,7 +61,7 @@ function Login({ setCurrentUser }) {
         </p>
         <p><button type="submit">Log In</button></p>
         <p>-- or --</p>
-        <p><Link to="/signup">Sign Up</Link></p>
+        <p><Link to="/signuptree">Sign Up</Link></p>
       </form>
     </div>
   )

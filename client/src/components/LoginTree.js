@@ -1,7 +1,10 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import Login from './Login'
-import Signup from './Signup'
+
+import SignupTree from './SignupTree'
+import SignupStylist from './SignupStylist'
+import SignupClient from './Signupclient'
 
 function LoginTree({ setCurrentUser }) {
   return (
@@ -9,8 +12,14 @@ function LoginTree({ setCurrentUser }) {
       <Route exact path="/">
         <Login setCurrentUser={setCurrentUser} />
       </Route>
-      <Route exact path="/signup">
-        <Signup setCurrentUser={setCurrentUser}/>
+      <Route exact path="/signupTree">
+        <SignupTree setCurrentUser={setCurrentUser}/>
+      </Route>
+      <Route exact path="/signupstylist">
+        <SignupStylist setCurrentUser={setCurrentUser} />
+      </Route>
+      <Route exact path="/signupclient">
+        <SignupClient setCurrentUser={setCurrentUser} />
       </Route>
       <Redirect to="/" />
     </Switch>
