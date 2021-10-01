@@ -117,10 +117,10 @@ function SignupStylist({ setCurrentUser }) {
           return(<div key ={salon.name}>
             <h1>{salon.name}</h1>
             <img
-            src="https://assets.bonappetit.com/photos/610aa6ddc50e2f9f7c42f7f8/master/pass/Savage-2019-top-50-busy-restaurant.jpg"
+            src="https://m.media-amazon.com/images/M/MV5BMTgxNTE0OTEzM15BMl5BanBnXkFtZTYwMjgwNzk2._V1_.jpg"
             alt="Salon"
             width="300px" 
-            height="300px"
+            height="600px"
             />
             <div>
             <input

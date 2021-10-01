@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_01_183028) do
+ActiveRecord::Schema.define(version: 2021_10_01_205155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_10_01_183028) do
     t.time "start_time"
     t.time "end_time"
     t.date "date"
+    t.string "postcut_pic"
     t.index ["client_id"], name: "index_appointments_on_client_id"
     t.index ["stylist_id"], name: "index_appointments_on_stylist_id"
   end
