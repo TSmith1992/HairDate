@@ -46,8 +46,10 @@ puts "Seeding Stylists..."
         salon_id: rand(1..4),
         name: Faker::Name.name,
         description: Faker::Quotes::Shakespeare.hamlet_quote,
-        years_active: rand(0..20),
-        password: "123"
+        years_active: Faker::Date.between(from: '1990-09-23', to: '2021-09-25'),
+        password: "123",
+        profile_pic: "https://static.wikia.nocookie.net/p__/images/6/61/JD_as_Acissorhamds.jpeg/revision/latest?cb=20160323144628&path-prefix=protagonist"
+
         )
 end
 

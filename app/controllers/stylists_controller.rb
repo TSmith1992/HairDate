@@ -30,7 +30,7 @@ class StylistsController < ApplicationController
     end
 
     def stylist_params
-        params.permit(:name, :password, :password_confirmation, :description)
+        params.permit(:name, :password, :password_confirmation, :description, :years_active, :profile_pic, :salon_id)
     end
 
     def render_not_found_response
