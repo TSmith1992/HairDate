@@ -1,10 +1,8 @@
-// import './App.css';
-// import GroupsContainer from './components/GroupsContainer'
-// import EventsContainer from './components/EventsContainer'
 import { Switch, Route, NavLink, useHistory } from 'react-router-dom'
 import Homepage from './Homepage'
+import ProfileEdit from './ProfileEdit'
 
-function AuthenticatedApp({ currentUser, setCurrentUser }) {
+function AuthenticatedApp({ currentUser, setCurrentUser, isClient }) {
   const history = useHistory()
   
   const handleLogout = () => {
@@ -19,23 +17,28 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
         }
       })
   }
+
   return (
     <div className="App">
       <nav>
         <span>
           <NavLink to="/homepage">HomePage</NavLink>{" - "}
-          {/* <NavLink to="/events">Events</NavLink> */}
+          <NavLink to="/profileedit">Edit Your Profile!</NavLink>
         </span>
         <span>Logged in as {currentUser.username} <button onClick={handleLogout}>Logout</button></span>
       </nav>
       <Switch>
         <Route path="/homepage">
           <Homepage 
-          currentUser={currentUser}/>
+          currentUser={currentUser}
+          isClient={isClient}/>
         </Route>
-        {/* <Route path="/events">
-          <EventsContainer />
-        </Route> */}
+        <Route path="/profileedit">
+          <ProfileEdit 
+          currentUser={currentUser}
+          isClient={isClient}
+          setCurrentUser={setCurrentUser} />
+        </Route>
       </Switch>
     </div>
   );

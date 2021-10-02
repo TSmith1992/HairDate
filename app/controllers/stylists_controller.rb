@@ -20,7 +20,7 @@ class StylistsController < ApplicationController
     def update
         stylist = find_stylist
         stylist.update!(stylist_params)
-        render json: stylist, status: :updated
+        render json: stylist, status: :ok
     end
 
     private

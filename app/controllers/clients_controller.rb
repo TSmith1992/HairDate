@@ -29,7 +29,7 @@ class ClientsController < ApplicationController
     def update
         client = find_client
         client.update!(client_params)
-        render json: client, status: :updated
+        render json: client, status: :ok
     end
 
     private
