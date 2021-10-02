@@ -14,6 +14,8 @@ export default function Homepage({ currentUser, isClient }) {
       />
       <h3>Number of Past Appointments: {currentUser.appointments.length}</h3>
       <h3>Number of Pending Appointments: {currentUser.appointments.length}</h3>
+      <h3>What You Would like Others to Know:</h3> 
+      <text>{currentUser.description}</text>
       {isClient? (
         <span>
           <h3>The look you're going for:</h3>

@@ -22,7 +22,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser, isClient }) {
     <div className="App">
       <nav>
         <span>
-          <NavLink to="/homepage">HomePage</NavLink>{" - "}
+          <NavLink to="/homepage">HomePage</NavLink>
           <NavLink to="/profileedit">Edit Your Profile!</NavLink>
         </span>
         <span>Logged in as {currentUser.username} <button onClick={handleLogout}>Logout</button></span>
