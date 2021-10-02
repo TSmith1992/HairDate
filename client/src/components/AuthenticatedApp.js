@@ -30,7 +30,8 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
       </nav>
       <Switch>
         <Route path="/homepage">
-          <Homepage />
+          <Homepage 
+          currentUser={currentUser}/>
         </Route>
         {/* <Route path="/events">
           <EventsContainer />
