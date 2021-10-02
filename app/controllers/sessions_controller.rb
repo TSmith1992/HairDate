@@ -1,8 +1,9 @@
 class SessionsController < ApplicationController
-    def create     
+    def create    
+        # byebug 
         user = Client.find_by(name: params[:name]) || Stylist.find_by(name: params[:name])
         if user&.authenticate(params[:password])
-            session[:id] = Client.id || Stylist.id
+            session[:user_id] = user.id
             render json: user, status: :created
         else
             render json: {error: "Invalid username or password"}, status: :unauthorized

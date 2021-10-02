@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-//import AuthenticatedApp from './AuthenticatedApp'
+import AuthenticatedApp from './components/AuthenticatedApp'
 import LoginTree from './components/LoginTree'
 import { BrowserRouter as Router } from 'react-router-dom'
 
@@ -27,11 +27,10 @@ function App() {
   return (
     <Router>
       {currentUser ? (
-        <div></div>
-          // <AuthenticatedApp
-          //   setCurrentUser={setCurrentUser}
-          //   currentUser={currentUser}
-          // />
+          <AuthenticatedApp
+            setCurrentUser={setCurrentUser}
+            currentUser={currentUser}
+          />
         ) : (
           <LoginTree
             setCurrentUser={setCurrentUser}

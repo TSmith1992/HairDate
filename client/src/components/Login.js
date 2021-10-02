@@ -3,7 +3,7 @@ import { Redirect, useHistory, Link } from 'react-router-dom'
 
 function Login({ setCurrentUser }) {
   const history = useHistory()
-  const [username, setUsername] = useState('')
+  const [name, setName] = useState('')
   const [password, setPassword] = useState('')
   
   const handleSubmit = (event) => {
@@ -13,13 +13,13 @@ function Login({ setCurrentUser }) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({username, password})
+      body: JSON.stringify({name, password})
     })
       .then(res => {
         if (res.ok) {
           res.json().then(user => {
             setCurrentUser(user)
-            history.push('/groups')
+            history.push('/homepage')
           })
         } else {
           res.json().then(errors => {
@@ -35,22 +35,22 @@ function Login({ setCurrentUser }) {
         <h1>Log In</h1>
         <p>
           <label 
-            htmlFor="username"
+            htmlFor="name"
           >
-            Username
+            Name:
           </label>
           <input
             type="text"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </p>
         <p>
           <label 
             htmlFor="password"
           >
-            Password
+            Password:
           </label>
           <input
             type="password"

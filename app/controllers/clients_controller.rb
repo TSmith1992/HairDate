@@ -2,6 +2,15 @@ class ClientsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
     # before_action :authorize
+
+    def show_me
+        user =  Client.find_by(id: session[:user_id]) || Stylist.find_by(id: session[:user_id])
+        if user
+            render json: user
+        else
+            render json: {error: "Not Authorized"}, status: :unauthorized
+        end
+    end
     
     def index
         render json: Client.all
