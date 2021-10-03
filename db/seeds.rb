@@ -42,13 +42,13 @@
 # puts "Seeding Stylists..."
 
 # 10.times do
-#     Stylist.create(
+#     Stylist.update(
 #         salon_id: rand(1..4),
 #         name: Faker::Name.name,
 #         description: Faker::Quotes::Shakespeare.hamlet_quote,
 #         years_active: Faker::Date.between(from: '1990-09-23', to: '2021-09-25'),
 #         password: "123",
-#         profile_pic: "https://static.wikia.nocookie.net/p__/images/6/61/JD_as_Acissorhamds.jpeg/revision/latest?cb=20160323144628&path-prefix=protagonist"
+#         profile_pic: "https://i.insider.com/5fc12c8850e71a0011557ae9?width=700"
 
 #         )
 # end
@@ -77,25 +77,25 @@
 
 # puts "Done Seeding Clients..."
 
-puts "Seeding Appointments..."
+# puts "Seeding Appointments..."
 
-100.times do
-    Appointment.create(
-        client_id: rand(1..20),
-        stylist_id: rand(1..10),
-        accepted: true,
-        # start_time: Faker::Time.between_dates(from: Date.today - 600, to: Date.today, period: :all),
-        # end_time: start_time+3600.seconds
-        date: Faker::Date.between(from: '2021-06-01', to: '2021-09-25'),
-        rating: rand(1..5),
-        review: "I'm a review! Woohoo!",
-        postcut_pic: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-92995560-1556552760.jpg?crop=1.00xw:0.673xh;0,0.0205xh&resize=640:*"
+# 100.times do
+#     Appointment.create(
+#         client_id: rand(1..20),
+#         stylist_id: rand(1..10),
+#         accepted: true,
+#         # start_time: Faker::Time.between_dates(from: Date.today - 600, to: Date.today, period: :all),
+#         # end_time: start_time+3600.seconds
+#         date: Faker::Date.between(from: '2021-06-01', to: '2021-09-25'),
+#         rating: rand(1..5),
+#         review: "I'm a review! Woohoo!",
+#         postcut_pic: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-92995560-1556552760.jpg?crop=1.00xw:0.673xh;0,0.0205xh&resize=640:*"
 
-        )        
-    # Appointment.update(
-    #         end_time: start_time+3600.seconds
-    #     )
-end
+#         )        
+#     # Appointment.update(
+#     #         end_time: start_time+3600.seconds
+#     #     )
+# end
 
 
-puts "Done Seeding Appointments..."
+# puts "Done Seeding Appointments..."

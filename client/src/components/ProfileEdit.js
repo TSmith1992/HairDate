@@ -11,7 +11,9 @@ export default function ProfileEdit({ currentUser, isClient, setCurrentUser }) {
       currentUser={currentUser}
       setCurrentUser={setCurrentUser}/> 
       : 
-      <StylistProfileEdit />}
+      <StylistProfileEdit 
+      currentUser={currentUser}
+      setCurrentUser={setCurrentUser}/>}
     </div>
   );
 }

@@ -4,7 +4,7 @@ class ClientsController < ApplicationController
     # before_action :authorize
 
     def show_me
-        user =  Client.find_by(id: session[:user_id]) || Stylist.find_by(id: session[:user_id])
+        user =  Client.find_by(name: session[:user_name]) || Stylist.find_by(name: session[:user_name])
         if user
             render json: user
         else

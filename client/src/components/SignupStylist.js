@@ -117,7 +117,7 @@ function SignupStylist({ setCurrentUser }) {
           return(<div key ={salon.name}>
             <h1>{salon.name}</h1>
             <img
-            src="https://m.media-amazon.com/images/M/MV5BMTgxNTE0OTEzM15BMl5BanBnXkFtZTYwMjgwNzk2._V1_.jpg"
+            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcFGLIb5RfMOKCK49npBM0gEANk78PtpTkHQ&usqp=CAU'
             alt="Salon"
             width="300px" 
             height="600px"
