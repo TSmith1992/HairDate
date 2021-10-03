@@ -28,6 +28,7 @@ export default function Homepage({ currentUser }) {
         </span>
       ) : (
         <div>
+          <h3>Your Average Rating: <em>{currentUser.avg_rating}.00</em></h3>
           <h1>The Salon: {currentUser.salon.name}</h1>
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcFGLIb5RfMOKCK49npBM0gEANk78PtpTkHQ&usqp=CAU"
@@ -39,6 +40,7 @@ export default function Homepage({ currentUser }) {
           <h3>Your Salon's opening hours: {currentUser.salon.opening_hours}</h3>
           <h3>Your Salon's opening hours: {currentUser.salon.closing_hours}</h3>
           <h3><em>{currentUser.salon.description}</em></h3>
+          <h3>Salon Stylist Rating: <em>{currentUser.avg_rating_salon}.00</em></h3>
         </div>
       )}
     </div>
