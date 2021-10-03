@@ -6,7 +6,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [authChecked, setAuthChecked] = useState(false);
-  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     fetch("/me", {
@@ -16,12 +15,10 @@ function App() {
         res.json().then((user) => {
           if (user.hairstyle_pic) {
             setCurrentUser(user);
-            setIsClient(true);
             setAuthChecked(true);
           } else{
             setCurrentUser(user);
             setAuthChecked(true);
-            setIsClient(false);
           }
         });
       } else {
@@ -39,7 +36,6 @@ function App() {
         <AuthenticatedApp
           setCurrentUser={setCurrentUser}
           currentUser={currentUser}
-          isClient={isClient}
         />
       ) : (
         <LoginTree setCurrentUser={setCurrentUser} />

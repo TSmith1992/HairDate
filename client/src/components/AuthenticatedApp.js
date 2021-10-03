@@ -5,7 +5,7 @@ import PastAppointment from './PastAppointment'
 import PendingAppointments from './PendingAppointments'
 import BookAppointment from './BookAppointment'
 
-function AuthenticatedApp({ currentUser, setCurrentUser, isClient }) {
+function AuthenticatedApp({ currentUser, setCurrentUser }) {
   const history = useHistory()
   
   const handleLogout = () => {
@@ -16,7 +16,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser, isClient }) {
       .then(res => {
         if (res.ok) {
           setCurrentUser(null)
-          history.push('/')
+          history.push('/login')
         }
       })
   }
@@ -29,7 +29,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser, isClient }) {
           <NavLink to="/profileedit">Edit Your Profile!</NavLink>
           <NavLink to="/pastappt">Past Appointments</NavLink>
           <NavLink to="/pendappt">Pending Appointments</NavLink>
-          {isClient? 
+          {currentUser.hairstyle_pic? 
           <NavLink to="/bookappt">Book an Appointment</NavLink>
           :<></>}
         </span>
@@ -39,31 +39,26 @@ function AuthenticatedApp({ currentUser, setCurrentUser, isClient }) {
       <Switch>
         <Route exact path="/homepage">
           <Homepage 
-          currentUser={currentUser}
-          isClient={isClient}/>
+          currentUser={currentUser}/>
         </Route>
         <Route exact path="/profileedit">
           <ProfileEdit 
           currentUser={currentUser}
-          isClient={isClient}
           setCurrentUser={setCurrentUser} />
         </Route>
         <Route exact path="/pastappt">
           <PastAppointment 
           currentUser={currentUser}
-          isClient={isClient}
            />
         </Route>
         <Route exact path="/pendappt">
           <PendingAppointments 
           currentUser={currentUser}
-          isClient={isClient}
            />
         </Route>
         <Route exact path="/bookappt">
           <BookAppointment 
           currentUser={currentUser}
-          isClient={isClient}
            />
         </Route>
       </Switch>

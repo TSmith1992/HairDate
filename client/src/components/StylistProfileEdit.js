@@ -127,7 +127,7 @@ function StylistProfileEdit({ setCurrentUser, currentUser }) {
         </p>
         <p>
           <label htmlFor="description">
-            What would you like for your Stylist to know about you?
+            What would you like for your potential Clients to know about you?
           </label>
           <p></p>
           <textarea

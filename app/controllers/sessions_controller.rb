@@ -1,9 +1,7 @@
 class SessionsController < ApplicationController
     def create    
-        # byebug 
         user = Client.find_by(name: params[:name]) || Stylist.find_by(name: params[:name])
         if user&.authenticate(params[:password])
-            # byebug
             session[:user_name] = user.name
             render json: user, status: :created
         else
@@ -12,7 +10,7 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        session.delete :id
+        session.delete :user_name
         head :no_content
     end
 end

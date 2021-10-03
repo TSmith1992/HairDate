@@ -1,10 +1,9 @@
 import React from "react";
 
-export default function Homepage({ currentUser, isClient }) {
+export default function Homepage({ currentUser }) {
   return (
     <div>
       {console.log("current User", currentUser)}
-      {console.log("is Client", isClient)}
       <h1>Hi {currentUser.name}!</h1>
       <h3>Find on this page some general information about your activities!</h3>
       <img
@@ -17,7 +16,7 @@ export default function Homepage({ currentUser, isClient }) {
       <h3>Number of Pending Appointments: {currentUser.appointments.length}</h3>
       <h3>What You Would like Others to Know:</h3>
       <p>{currentUser.description}</p>
-      {isClient ? (
+      {currentUser.hairstyle_pic ? (
         <span>
           <h3>The look you're going for:</h3>
           <img

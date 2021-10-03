@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Redirect, useHistory, Link } from 'react-router-dom'
 
-function Login({ setCurrentUser }) {
+function Login({ setCurrentUser,  }) {
   const history = useHistory()
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
@@ -19,12 +19,13 @@ function Login({ setCurrentUser }) {
         if (res.ok) {
           res.json().then(user => {
             setCurrentUser(user)
-            history.push('/homepage')
+            history.push('/homepage')            
           })
         } else {
           res.json().then(errors => {
             console.error(errors)
             alert(`${errors.error}`)
+
           })
         }
       })
