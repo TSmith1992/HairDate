@@ -3,7 +3,6 @@ import { useHistory, Link } from "react-router-dom";
 
 function SignupClient({ setCurrentUser }) {
   const history = useHistory();
-  // const [client, setClient] = useState(false)
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");

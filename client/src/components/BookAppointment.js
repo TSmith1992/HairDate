@@ -11,7 +11,6 @@ export default function BookAppointment({ currentUser, isClient }) {
         });
     },[]);
 
-    // console.log("salons, ", salons.map(salon => salon.name))
     return (
     <div>
       <h1>Hi! I'm the book an appointment page!</h1>
