@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Homepage({ currentUser }) {
+  let newDate = new Date()
   return (
     <div>
       {console.log("current User", currentUser)}
@@ -12,8 +13,8 @@ export default function Homepage({ currentUser }) {
         width="300px"
         height="300px"
       />
-      <h3>Number of Past Appointments: {currentUser.appointments.length}</h3>
-      <h3>Number of Pending Appointments: {currentUser.appointments.length}</h3>
+      <h3>Number of Past Appointments: {currentUser.appointments.filter(appointment => appointment.date <= newDate).length}</h3>
+      <h3>Number of Pending Appointments: {currentUser.appointments.filter(appointment => appointment.accepted !== true).length}</h3>
       <h3>What You Would like Others to Know:</h3>
       <p>{currentUser.description}</p>
       {currentUser.hairstyle_pic ? (
