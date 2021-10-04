@@ -80,21 +80,21 @@
 # puts "Seeding Appointments..."
 
 # 100.times do
-#     Appointment.create(
-#         client_id: rand(1..20),
-#         stylist_id: rand(1..10),
-#         accepted: true,
-#         # start_time: Faker::Time.between_dates(from: Date.today - 600, to: Date.today, period: :all),
-#         # end_time: start_time+3600.seconds
-#         date: Faker::Date.between(from: '2021-06-01', to: '2021-09-25'),
-#         rating: rand(1..5),
-#         review: "I'm a review! Woohoo!",
-#         postcut_pic: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-92995560-1556552760.jpg?crop=1.00xw:0.673xh;0,0.0205xh&resize=640:*"
+    # Appointment.create(
+        # client_id: rand(1..20),
+        # stylist_id: rand(1..10),
+        # accepted: true,
+        # # start_time: Faker::Time.between_dates(from: Date.today - 600, to: Date.today, period: :all),
+        # # end_time: start_time+3600.seconds
+        # date: Faker::Date.between(from: '2021-06-01', to: '2021-09-25'),
+        # rating: rand(1..5),
+        # review: "I'm a review! Woohoo!",
+        # postcut_pic: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-92995560-1556552760.jpg?crop=1.00xw:0.673xh;0,0.0205xh&resize=640:*"
 
-#         )        
-#     # Appointment.update(
-#     #         end_time: start_time+3600.seconds
-#     #     )
+        # )        
+#     Appointment.update(
+#            postcut_pic:"https://www.hiphollywood.com/wp-content/uploads/2021/02/Screen-Shot-2021-02-01-at-10.08.58-AM.png"
+#         )
 # end
 
 
