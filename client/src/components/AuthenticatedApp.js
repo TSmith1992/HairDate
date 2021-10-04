@@ -4,6 +4,7 @@ import ProfileEdit from './ProfileEdit'
 import PastAppointment from './PastAppointment'
 import PendingAppointments from './PendingAppointments'
 import BookAppointment from './BookAppointment'
+import PastAppointmentTree from './PastAppointmentTree'
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
   const history = useHistory()
@@ -47,7 +48,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
           setCurrentUser={setCurrentUser} />
         </Route>
         <Route exact path="/pastappt">
-          <PastAppointment 
+          <PastAppointmentTree 
           currentUser={currentUser}
            />
         </Route>

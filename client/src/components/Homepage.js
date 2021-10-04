@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Homepage({ currentUser }) {
-  let newDate = new Date()
   return (
     <div>
       {console.log("current User", currentUser)}

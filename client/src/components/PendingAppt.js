@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function PendingAppt({ currentUser, appt }) {
-  const [clicked, setClicked] = useState(false);
   let startTime = new Date(appt.start_time).getHours();
   // .toLocaleTimeString('en-US')
   console.log(appt);
@@ -11,7 +10,6 @@ export default function PendingAppt({ currentUser, appt }) {
       method: "DELETE",
     });
     alert(`You have successfully rejected this appointment on ${appt.date}.`);
-    setClicked(true);
     window.location.reload();
   }
 
@@ -25,7 +23,6 @@ export default function PendingAppt({ currentUser, appt }) {
     })
       .then((r) => r.json())
       .then((data) => console.log(data));
-    setClicked(true);
     window.location.reload();
   }
 

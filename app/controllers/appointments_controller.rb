@@ -20,7 +20,7 @@ class AppointmentsController < ApplicationController
     def update
         appointment = find_appointment
         appointment.update!(appointment_params)
-        render json: appointment, status: :updated
+        render json: appointment, status: :ok
     end
 
     def destroy
@@ -36,7 +36,7 @@ class AppointmentsController < ApplicationController
     end
 
     def appointment_params
-        params.permit(:client_id, :stylist_id, :accepted, :rating, :review, :start_time, :end_time, :date )
+        params.permit(:client_id, :stylist_id, :accepted, :rating, :review, :start_time, :end_time, :date, :postcut_pic )
     end
 
     def render_not_found_response
