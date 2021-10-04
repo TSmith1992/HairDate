@@ -1,7 +1,6 @@
 import { Switch, Route, NavLink, useHistory } from 'react-router-dom'
 import Homepage from './Homepage'
 import ProfileEdit from './ProfileEdit'
-import PastAppointment from './PastAppointment'
 import PendingAppointments from './PendingAppointments'
 import BookAppointment from './BookAppointment'
 import PastAppointmentTree from './PastAppointmentTree'
