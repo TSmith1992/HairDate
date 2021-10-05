@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
+import './StyledComponents/MyCSS.css'
 
 function SignupClient({ setCurrentUser }) {
   const history = useHistory();
@@ -44,7 +45,7 @@ function SignupClient({ setCurrentUser }) {
   return (
     <div className="authForm">
       <form onSubmit={handleSubmit}>
-        <h1>Client Sign Up</h1>
+        <h1>Client Sign Up Page</h1>
         <p>
           <label htmlFor="name">Name:</label>
           <input
@@ -116,11 +117,11 @@ function SignupClient({ setCurrentUser }) {
           )}
         </p>
         <p>
-          <button type="submit">Sign Up</button>
+          <button type="submit" className="Login">Sign Up</button>
         </p>
         <p>-- or --</p>
         <p>
-          <Link to="/">Log In</Link>
+          <Link to="/" class='Links'>Log In</Link>
         </p>
       </form>
     </div>
