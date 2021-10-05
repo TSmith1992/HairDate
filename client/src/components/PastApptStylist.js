@@ -9,10 +9,6 @@ export default function PastAppt({ currentUser, appt }) {
   return (
     <div>
       <p>Appt date:{appt.date}</p>
-      <p>
-        Appt Start Time :{appt.start_time}...{startTime}
-      </p>
-      <p>Appt End Time:{appt.end_time}</p>
       {appt.postcut_pic ? (
         <>
           <p>The Do'</p>
