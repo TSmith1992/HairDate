@@ -1,4 +1,4 @@
-.login {
+  .login {
     background: transparent;
     border-radius: 3px;
     border: 2px solid palevioletred;
@@ -6,6 +6,11 @@
     margin: 0 1em;
     padding: 0.25em 1em;
   }
+
+  button:hover{
+    background-color: cyan;
+  }
+
 
   .authForm {
     background: transparent;
