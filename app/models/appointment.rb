@@ -6,6 +6,7 @@ class Appointment < ApplicationRecord
   validates :client_id, presence: true
   validates :stylist_id, presence: true
   validates :date, uniqueness: {scope: [:start_time, :end_time, :stylist_id], message: 'Sorry, but that time is already booked'}
+
   # validates :start_time, numericality: {greater_than_or_equal_to: :stylist_id.salon_id.opening_hours}
 
   # validates :end_time, numericality: {less_than_or_equal_to: :stylist_id.salon_id.closing_hours}

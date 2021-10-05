@@ -29,10 +29,10 @@ export default function PendingAppt({ currentUser, appt }) {
   return (
     <div>
       <p>Appt date:{appt.date}</p>
-      <p>
+      {/* <p>
         Appt Start Time :{appt.start_time}...{startTime}
       </p>
-      <p>Appt End Time:{appt.end_time}</p>
+      <p>Appt End Time:{appt.end_time}</p> */}
       {currentUser.hairstyle_pic ? (
         <button name="Reject" onClick={RejectAppt}>
           Delete Appointment Request

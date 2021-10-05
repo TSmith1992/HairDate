@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './StyledComponents/MyCSS.css'
 import { Redirect, useHistory, Link } from 'react-router-dom'
 
 function Login({ setCurrentUser,  }) {
@@ -61,9 +62,9 @@ function Login({ setCurrentUser,  }) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </p>
-        <p><button type="submit">Log In</button></p>
+        <p><button className="login" type="submit">Log In</button></p>
         <p>-- or --</p>
-        <p><Link to="/signuptree">Sign Up</Link></p>
+        <button className="login"><Link to="/signuptree">Sign Up</Link></button>
       </form>
     </div>
   )

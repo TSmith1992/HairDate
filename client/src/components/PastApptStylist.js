@@ -1,14 +1,16 @@
 import React from "react";
 
 export default function PastAppt({ currentUser, appt }) {
-  let startTime = new Date(appt.start_time).getHours();
-  // .toLocaleTimeString('en-US')
+  const apptDate = new Date(appt.date);
+  const dateApt = `${
+    apptDate.getMonth() + 1
+  }/${apptDate.getDate()}/${apptDate.getFullYear()}`;
   console.log("currentUser", currentUser);
   console.log("appt", appt);
 
   return (
     <div>
-      <p>Appt date:{appt.date}</p>
+      <p>Appt date:{dateApt}</p>
       {appt.postcut_pic ? (
         <>
           <p>The Do'</p>
@@ -25,7 +27,7 @@ export default function PastAppt({ currentUser, appt }) {
             Rating: <em>{appt.rating}</em>
           </p>
         </>
-      ) : <>Hold tight! The Client will review the date shortly </>}
+      ) : <>Hold tight! The Client will write a review shortly </>}
       <br></br>
     </div>
   );
