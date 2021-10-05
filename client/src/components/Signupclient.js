@@ -48,6 +48,7 @@ function SignupClient({ setCurrentUser }) {
         <h1>Client Sign Up Page</h1>
         <p>
           <label htmlFor="name">Name:</label>
+          <br></br>
           <input
             type="text"
             name="name"
@@ -57,6 +58,7 @@ function SignupClient({ setCurrentUser }) {
         </p>
         <p>
           <label htmlFor="password">Password:</label>
+          <br></br>
           <input
             type="password"
             name="password"
@@ -66,6 +68,7 @@ function SignupClient({ setCurrentUser }) {
         </p>
         <p>
           <label htmlFor="password_confirmation">Password Confirmation:</label>
+          <br></br>
           <input
             type="password"
             name="password_confirmation"
@@ -75,6 +78,7 @@ function SignupClient({ setCurrentUser }) {
         </p>
         <p>
           <label htmlFor="profile_pic">Profile Picture:</label>
+          <br></br>
           <input
             type="profile_pic"
             name="profile_pic"
@@ -84,6 +88,7 @@ function SignupClient({ setCurrentUser }) {
         </p>
         <p>
           <label htmlFor="hairstyle_pic">Preferred Hairstyle:</label>
+          <br></br>
           <input
             type="hairstyle_pic"
             name="hairstyle_pic"
@@ -95,7 +100,7 @@ function SignupClient({ setCurrentUser }) {
           <label htmlFor="description">
             What would you like for your Stylist to know about you?
           </label>
-          <p></p>
+          <br></br>
           <textarea
             type="description"
             name="description"
@@ -108,7 +113,7 @@ function SignupClient({ setCurrentUser }) {
             <>
               {errors.errors.map((error) => (
                 <strong key={error}>
-                  <li>{error}</li>
+                  <li style={{color: "red"}}>{error}</li>
                 </strong>
               ))}
             </>
@@ -117,12 +122,12 @@ function SignupClient({ setCurrentUser }) {
           )}
         </p>
         <p>
-          <button type="submit" className="Login">Sign Up</button>
+          <button type="submit" className="login">Sign Up</button>
         </p>
         <p>-- or --</p>
-        <p>
+        <button className="login">
           <Link to="/" class='Links'>Log In</Link>
-        </p>
+          </button>
       </form>
     </div>
   );

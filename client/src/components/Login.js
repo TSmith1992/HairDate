@@ -29,14 +29,23 @@ function Login({ setCurrentUser }) {
     });
   };
   return (
-    <div className="container">
     <div className="authForm">
       <Redirect to="/" />
       <form onSubmit={handleSubmit}>
-        <h1>Welcome to <strong><em>HAIRDATE</em></strong>!
-        <p><em>Hair for Me, Here for You!</em></p> Log In</h1>
+        <h1>
+          Welcome to{" "}
+          <strong>
+            <em>HAIRDATE</em>
+          </strong>
+          !
+          <p>
+            <em>Hair for Me, Here for You!</em>
+          </p>
+          Log In
+        </h1>
         <p>
-          <label htmlFor="name">🕴️Name:🕴️</label><br></br>
+          <label htmlFor="name">🕴️Name:🕴️</label>
+          <br></br>
           <input
             type="text"
             name="name"
@@ -45,7 +54,8 @@ function Login({ setCurrentUser }) {
           />
         </p>
         <p>
-          <label htmlFor="password">🤫Password:🤫</label><br></br>
+          <label htmlFor="password">🤫Password:🤫</label>
+          <br></br>
           <input
             type="password"
             name=""
@@ -60,10 +70,11 @@ function Login({ setCurrentUser }) {
         </p>
         <p>-- or --</p>
         <button className="login">
-          <Link to="/signuptree" class='Links'>Sign Up</Link>
+          <Link to="/signuptree" class="Links">
+            Sign Up
+          </Link>
         </button>
       </form>
-    </div>
     </div>
   );
 }
