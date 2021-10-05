@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AuthenticatedApp from "./components/AuthenticatedApp";
 import LoginTree from "./components/LoginTree";
 import { BrowserRouter as Router } from "react-router-dom";
-
+import "./components/StyledComponents/MyCSS.css"
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [authChecked, setAuthChecked] = useState(false);
@@ -31,6 +31,7 @@ function App() {
     return <div></div>;
   }
   return (
+    <div className="App">
     <Router>
       {currentUser ? (
         <AuthenticatedApp
@@ -41,6 +42,7 @@ function App() {
         <LoginTree setCurrentUser={setCurrentUser} />
       )}
     </Router>
+    </div>
   );
 }
 

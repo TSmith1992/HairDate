@@ -1,17 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./StyledComponents/MyCSS.css";
 
 function SignupTree() {
   return (
-    <>
-      <p>
-        <Link to="/signupclient">Sign Up As A Client</Link>
-      </p>
+    <div className="authFormSignupTree">
+      <button className="login">
+        <Link to="/signupclient" class="Links">
+          Sign Up As A Client
+        </Link>
+      </button>
       <p>-- or --</p>
-      <p>
-        <Link to="/signupstylist">Sign Up As A Stylist</Link>
-      </p>
-    </>
+      <button className="login">
+        <Link to="/signupstylist" class="Links">
+          Sign Up As A Stylist
+        </Link>
+      </button>
+    </div>
   );
 }
 
