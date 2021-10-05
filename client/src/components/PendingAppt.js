@@ -1,9 +1,6 @@
 import React from "react";
 
 export default function PendingAppt({ currentUser, appt }) {
-  let startTime = new Date(appt.start_time).getHours();
-  // .toLocaleTimeString('en-US')
-  console.log(appt);
 
   function RejectAppt(e) {
     fetch(`/appointments/${appt.id}`, {
