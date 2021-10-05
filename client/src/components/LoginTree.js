@@ -1,10 +1,9 @@
-import React from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
-import Login from './Login'
-
-import SignupTree from './SignupTree'
-import SignupStylist from './SignupStylist'
-import SignupClient from './Signupclient'
+import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import Login from "./Login";
+import SignupTree from "./SignupTree";
+import SignupStylist from "./SignupStylist";
+import SignupClient from "./Signupclient";
 
 function LoginTree({ setCurrentUser }) {
   return (
@@ -13,7 +12,7 @@ function LoginTree({ setCurrentUser }) {
         <Login setCurrentUser={setCurrentUser} />
       </Route>
       <Route exact path="/signupTree">
-        <SignupTree setCurrentUser={setCurrentUser}/>
+        <SignupTree setCurrentUser={setCurrentUser} />
       </Route>
       <Route exact path="/signupstylist">
         <SignupStylist setCurrentUser={setCurrentUser} />
@@ -23,7 +22,7 @@ function LoginTree({ setCurrentUser }) {
       </Route>
       <Redirect to="/" />
     </Switch>
-  )
+  );
 }
 
-export default LoginTree
+export default LoginTree;

@@ -5,8 +5,6 @@ export default function PastAppt({ currentUser, appt }) {
   const dateApt = `${
     apptDate.getMonth() + 1
   }/${apptDate.getDate()}/${apptDate.getFullYear()}`;
-  console.log("currentUser", currentUser);
-  console.log("appt", appt);
 
   return (
     <div>
@@ -27,7 +25,9 @@ export default function PastAppt({ currentUser, appt }) {
             Rating: <em>{appt.rating}</em>
           </p>
         </>
-      ) : <>Hold tight! The Client will write a review shortly </>}
+      ) : (
+        <>Hold tight! The Client will write a review shortly </>
+      )}
       <br></br>
     </div>
   );

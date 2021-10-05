@@ -33,14 +33,14 @@ function SignupClient({ setCurrentUser }) {
           history.push("/homepage");
         });
       } else {
-        // history.push("/signuptree");
         res.json().then((errors) => {
-          console.log(errors)
+          console.log(errors);
           setErrors(errors);
         });
       }
     });
   }
+
   return (
     <div className="authForm">
       <form onSubmit={handleSubmit}>
@@ -103,7 +103,17 @@ function SignupClient({ setCurrentUser }) {
           />
         </p>
         <p>
-          {errors? <>{errors.errors.map(error => <strong key={error}><li>{error}</li></strong>)}</>:<></>}
+          {errors ? (
+            <>
+              {errors.errors.map((error) => (
+                <strong key={error}>
+                  <li>{error}</li>
+                </strong>
+              ))}
+            </>
+          ) : (
+            <></>
+          )}
         </p>
         <p>
           <button type="submit">Sign Up</button>

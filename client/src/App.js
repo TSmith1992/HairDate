@@ -16,7 +16,7 @@ function App() {
           if (user.hairstyle_pic) {
             setCurrentUser(user);
             setAuthChecked(true);
-          } else{
+          } else {
             setCurrentUser(user);
             setAuthChecked(true);
           }

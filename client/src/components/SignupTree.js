@@ -1,18 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-function SignupTree(){
+function SignupTree() {
+  return (
+    <>
+      <p>
+        <Link to="/signupclient">Sign Up As A Client</Link>
+      </p>
+      <p>-- or --</p>
+      <p>
+        <Link to="/signupstylist">Sign Up As A Stylist</Link>
+      </p>
+    </>
+  );
+}
 
-    return(
-        <>
-        <p><Link to="/signupclient">Sign Up As A Client</Link></p>
-        <p>-- or --</p>
-        <p><Link to="/signupstylist">Sign Up As A Stylist</Link></p>
-        </>
-    )
-
-
-} 
-
-
-export default SignupTree
+export default SignupTree;

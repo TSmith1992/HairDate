@@ -38,7 +38,6 @@ export default function BookingTemplate({ stylist, currentUser }) {
             window.location.reload()
           });
         } else {
-          // history.push("/signuptree");
           res.json().then((errors) => {
             console.log(
               "these are the errors after performing the post appt.: ",

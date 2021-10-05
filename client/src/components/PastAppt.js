@@ -3,9 +3,6 @@ import ReviewInputs from "./ReviewInputs";
 
 export default function PastAppt({ currentUser, appt }) {
   const [clicked, setClicked] = useState(false);
-  // let startTime = appt.start_time;
-  // .toLocaleTimeString('en-US')
-  // debugger
   const current = new Date();
   const date = `${
     current.getMonth() + 1
@@ -16,8 +13,8 @@ export default function PastAppt({ currentUser, appt }) {
   }/${apptDate.getDate()}/${apptDate.getFullYear()}`;
 
   // console.log("currentUser", currentUser);
-  console.log("appt", appt);
-  console.log("appt date comparison", dateApt < date);
+  // console.log("appt", appt);
+  // console.log("appt date comparison", dateApt < date);
 
   return (
     <div>

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 
 export default function ReviewInputs({ currentUser, appt }) {
-    const history = useHistory()
+  const history = useHistory();
   const [review, setReview] = useState("");
-  const [postCut, setPostCut] = useState("")
-  const [rating, setRating] = useState("")
-  const [errors, setErrors] = useState("")
+  const [postCut, setPostCut] = useState("");
+  const [rating, setRating] = useState("");
+  const [errors, setErrors] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,28 +16,28 @@ export default function ReviewInputs({ currentUser, appt }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-
         rating,
         review,
-        postcut_pic: postCut
+        postcut_pic: postCut,
       }),
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
-            alert('Lookin Good!')
+          alert("Lookin Good!");
           history.push("/homepage");
-          window.location.reload()
+          window.location.reload();
         });
       } else {
         res.json().then((errors) => {
-          console.log(errors)
+          console.log(errors);
           setErrors(errors);
         });
       }
     });
   }
+
   return (
-      <div>
+    <div>
       <form onSubmit={handleSubmit}>
         <p></p>
         General Score:
@@ -55,9 +55,7 @@ export default function ReviewInputs({ currentUser, appt }) {
           <option value="5">5: Amazing!</option>
         </select>
         <p></p>
-        <label htmlFor="review">
-          Got anything to say? Let us know!
-        </label>
+        <label htmlFor="review">Got anything to say? Let us know!</label>
         <p>
           <textarea
             type="review"
@@ -67,7 +65,9 @@ export default function ReviewInputs({ currentUser, appt }) {
           />
         </p>
         <p>
-          <label htmlFor="postCut">Snap a pic of your new 'do so you can compare your hair for later.</label>
+          <label htmlFor="postCut">
+            Snap a pic of your new 'do so you can compare your hair for later.
+          </label>
           <p></p>
           <input
             type="postCut"
@@ -78,7 +78,17 @@ export default function ReviewInputs({ currentUser, appt }) {
         </p>
         <button type="submit">Submit Review</button>
         <p>
-          {errors? <>{errors.errors.map(error => <strong key={error}><li>{error}</li></strong>)}</>:<></>}
+          {errors ? (
+            <>
+              {errors.errors.map((error) => (
+                <strong key={error}>
+                  <li>{error}</li>
+                </strong>
+              ))}
+            </>
+          ) : (
+            <></>
+          )}
         </p>
       </form>
     </div>

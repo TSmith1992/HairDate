@@ -3,7 +3,7 @@ import { useHistory, Link } from "react-router-dom";
 
 function SignupStylist({ setCurrentUser }) {
   const history = useHistory();
-  const [salons, setSalons] = useState('')
+  const [salons, setSalons] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -35,7 +35,7 @@ function SignupStylist({ setCurrentUser }) {
         years_active: yearsActive,
         profile_pic: profilePic,
         description,
-        salon_id: salonId
+        salon_id: salonId,
       }),
     }).then((res) => {
       if (res.ok) {
@@ -44,14 +44,13 @@ function SignupStylist({ setCurrentUser }) {
           history.push("/homepage");
         });
       } else {
-        // history.push("/signuptree");
         res.json().then((errors) => {
-          console.log(errors)
           setErrors(errors);
         });
       }
     });
   }
+
   return (
     <div className="authForm">
       <form onSubmit={handleSubmit}>
@@ -103,7 +102,8 @@ function SignupStylist({ setCurrentUser }) {
         </p>
         <p>
           <label htmlFor="description">
-            What would you like potential Clients to know about you? Do you have hair preferences or specialties?
+            What would you like potential Clients to know about you? Do you have
+            hair preferences or specialties?
           </label>
           <p></p>
           <textarea
@@ -113,32 +113,54 @@ function SignupStylist({ setCurrentUser }) {
             onChange={(e) => setDescription(e.target.value)}
           />
         </p>
-        {salons? salons.map(salon =>{ 
-          return(<div key ={salon.name}>
-            <h1>{salon.name}</h1>
-            <img
-            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcFGLIb5RfMOKCK49npBM0gEANk78PtpTkHQ&usqp=CAU'
-            alt="Salon"
-            width="300px" 
-            height="600px"
-            />
-            <div>
-            <input
-              type="checkbox"
-              value={salon.id}
-              onChange={e => setSalonId(e.target.value)}
-              /> <strong>Click here to work with {salon.name}.</strong>
-            </div>
-              <h5>Address: {salon.address}</h5>
-              <h5>Open Every Day from {salon.opening_hours} to {salon.closing_hours}. As a Stylist collaborating with them, you will only be able to accept appointments within these hours. </h5>
-              <h5><em>{salon.description}</em></h5>
-            </div>)
-        })
-        :<>Loading...</>}
-
+        {salons ? (
+          salons.map((salon) => {
+            return (
+              <div key={salon.name}>
+                <h1>{salon.name}</h1>
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcFGLIb5RfMOKCK49npBM0gEANk78PtpTkHQ&usqp=CAU"
+                  alt="Salon"
+                  width="300px"
+                  height="600px"
+                />
+                <div>
+                  <input
+                    type="checkbox"
+                    value={salon.id}
+                    onChange={(e) => setSalonId(e.target.value)}
+                  />{" "}
+                  <strong>Click here to work with {salon.name}.</strong>
+                </div>
+                <h5>Address: {salon.address}</h5>
+                <h5>
+                  Open Every Day from {salon.opening_hours} to{" "}
+                  {salon.closing_hours}. As a Stylist collaborating with them,
+                  you will only be able to accept appointments within these
+                  hours.{" "}
+                </h5>
+                <h5>
+                  <em>{salon.description}</em>
+                </h5>
+              </div>
+            );
+          })
+        ) : (
+          <>Loading...</>
+        )}
 
         <p>
-          {errors? <>{errors.errors.map(error => <strong key={error}><li>{error}</li></strong>)}</>:<></>}
+          {errors ? (
+            <>
+              {errors.errors.map((error) => (
+                <strong key={error}>
+                  <li>{error}</li>
+                </strong>
+              ))}
+            </>
+          ) : (
+            <></>
+          )}
         </p>
         <p>
           <button type="submit">Sign Up</button>
