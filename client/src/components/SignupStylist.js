@@ -14,6 +14,11 @@ function SignupStylist({ setCurrentUser }) {
   const [errors, setErrors] = useState("");
   const [salonId, setSalonId] = useState("");
 
+  // const salonOpening= new Date(salon.opening_hours)
+  // const salonClosing= new Date(salon.closing_hours)
+  // const salonOpeningHours = salonOpening.toLocaleTimeString('en-US')
+  // const salonClosingHours = salonClosing.toLocaleTimeString('en-US')
+
   useEffect(() => {
     fetch(`/salons`)
       .then((r) => r.json())
@@ -97,7 +102,7 @@ function SignupStylist({ setCurrentUser }) {
           />
         </p>
         <p>
-          <label htmlFor="years_active">When did you Start as a Stylist?</label>
+          <label htmlFor="years_active">When did you start as a Stylist?</label>
           <br></br>
           <input
             type="date"
@@ -122,8 +127,7 @@ function SignupStylist({ setCurrentUser }) {
         <label htmlFor="salon-choice">
           With which Salon would you like collaborate?
         </label>
-        <div class="row">
-          <div class="column">
+        <div class="container">
             {salons ? (
               salons.map((salon) => {
                 return (
@@ -133,7 +137,7 @@ function SignupStylist({ setCurrentUser }) {
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcFGLIb5RfMOKCK49npBM0gEANk78PtpTkHQ&usqp=CAU"
                       alt="Salon"
                       width="300px"
-                      height="600px"
+                      height="300px"
                     />
                     <div>
                       <input
@@ -145,8 +149,7 @@ function SignupStylist({ setCurrentUser }) {
                     </div>
                     <h5>Address: {salon.address}</h5>
                     <h5>
-                      Open Every Day from {salon.opening_hours} to
-                      {salon.closing_hours}. As a Stylist collaborating with
+                      Open every day. As a Stylist collaborating with
                       them, you will only be able to accept appointments within
                       these hours.
                     </h5>
@@ -159,7 +162,6 @@ function SignupStylist({ setCurrentUser }) {
             ) : (
               <>Loading...</>
             )}
-          </div>
         </div>
 
         <p>

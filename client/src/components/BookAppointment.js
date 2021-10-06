@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SalonChooser from "./SalonChooser";
 
-export default function BookAppointment({ currentUser, isClient }) {
+export default function BookAppointment({ currentUser }) {
   const [salons, setSalons] = useState([]);
   useEffect(() => {
     fetch("/salons")

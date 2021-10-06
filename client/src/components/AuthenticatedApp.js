@@ -4,6 +4,7 @@ import ProfileEdit from "./ProfileEdit";
 import PendingAppointments from "./PendingAppointments";
 import BookAppointment from "./BookAppointment";
 import PastAppointmentTree from "./PastAppointmentTree";
+import './StyledComponents/MyCSS.css'
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
   const history = useHistory();
@@ -24,19 +25,19 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
     <div className="App">
       <nav>
         <span>
-          <NavLink to="/homepage">HomePage</NavLink>
-          <NavLink to="/profileedit">Edit Your Profile!</NavLink>
-          <NavLink to="/pastappt">Past Appointments</NavLink>
-          <NavLink to="/pendappt">Pending Appointments</NavLink>
+          <NavLink to="/homepage"><button className='NavLinks'>HomePage</button></NavLink>
+          <NavLink to="/profileedit"><button className='NavLinks'>Edit Your Profile!</button></NavLink>
+          <NavLink to="/pastappt"><button className='NavLinks'>Past Appointments</button></NavLink>
+          <NavLink to="/pendappt"><button className='NavLinks'>Pending Appointments</button></NavLink>
           {currentUser.hairstyle_pic ? (
-            <NavLink to="/bookappt">Book an Appointment</NavLink>
+            <NavLink to="/bookappt"><button className='NavLinks'>Book an Appointment</button></NavLink>
           ) : (
             <></>
           )}
         </span>
-        <span>
-          Logged in as <strong>{currentUser.name}</strong>
-          <button onClick={handleLogout}>Logout</button>
+        <span><br></br><br></br>
+          Logged in as <strong>{currentUser.name}</strong><p></p>
+          <button className='logout' onClick={handleLogout}>Logout</button>
         </span>
       </nav>
       <Switch>

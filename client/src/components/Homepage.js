@@ -1,12 +1,13 @@
 import React from "react";
+import './StyledComponents/MyCSS.css'
 
 export default function Homepage({ currentUser }) {
   return (
-    <div>
+    <div className="authForm">
       {console.log("current User", currentUser)}
 
       <h1>Hi {currentUser.name}!</h1>
-      <h3>Find on this page some general information about your activities!</h3>
+      <h3 className="Title">Find on this page some general information about you and your activities!</h3>
       <img
         src={currentUser.profile_pic}
         alt="Profile"
