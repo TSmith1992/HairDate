@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReviewInputs from "./ReviewInputs";
+import './StyledComponents/MyCSS.css'
 
 export default function PastAppt({ currentUser, appt }) {
   const [clicked, setClicked] = useState(false);
@@ -17,7 +18,7 @@ export default function PastAppt({ currentUser, appt }) {
   // console.log("appt date comparison", dateApt < date);
 
   return (
-    <div>
+    <div className="stylistcard">
       <p>Appt date: {dateApt}</p>
       {appt.postcut_pic ? (
         <>

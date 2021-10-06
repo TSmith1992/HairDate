@@ -1,4 +1,5 @@
 import React from "react";
+import './StyledComponents/MyCSS.css'
 
 export default function PastAppt({ currentUser, appt }) {
   const apptDate = new Date(appt.date);
@@ -7,7 +8,7 @@ export default function PastAppt({ currentUser, appt }) {
   }/${apptDate.getDate()}/${apptDate.getFullYear()}`;
 
   return (
-    <div>
+    <div className="stylistcard">
       <p>Appt date:{dateApt}</p>
       {appt.postcut_pic ? (
         <>

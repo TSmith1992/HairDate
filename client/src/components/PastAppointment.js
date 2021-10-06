@@ -1,10 +1,11 @@
 import React from "react";
 import PastAppt from "./PastAppt";
+import './StyledComponents/MyCSS.css'
 
 export default function PastAppointment({ currentUser }) {
   return (
-    <div>
-      Hi! I'm the Past Appointment Page!
+    <div className="container">
+      Past Appointment Page!
       {currentUser.appointments
         .filter((appointment) => appointment.accepted)
         .map((appt) => (
