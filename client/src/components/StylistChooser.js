@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BookingTemplate from "./BookingTemplate";
+import "./StyledComponents/MyCSS.css"
 
 export default function StylistChooser({ stylist, currentUser }) {
   const [showBooking, setShowBooking] = useState(false);
@@ -11,18 +12,18 @@ export default function StylistChooser({ stylist, currentUser }) {
   console.log(stylist);
 
   return (
-    <div>
-      Hi! I am {stylist.name}!
+    <div className="stylistcard">
+      <strong>{stylist.name}</strong>!
       <img
         src={stylist.profile_pic}
         alt={stylist.name}
         width="200px"
         height="150px"
       />
-      <p>{stylist.description}</p>
-      <p>First Date as a Stylist: {stylistYearsActive}</p>
-      <p>Total number of appointments: {stylist.appointments.length}</p>
-      <p>Average Rating: {stylist.avg_rating}</p>
+      <p><em>{stylist.description}</em></p>
+      <p><strong>First Date as a Stylist: </strong>{stylistYearsActive}</p>
+      <p><strong>Total number of appointments:</strong><br></br> {stylist.appointments.length}</p>
+      <p><strong>Average Rating:</strong> {stylist.avg_rating}</p>
       <button onClick={(e) => setShowBooking(!showBooking)}>
         Schedule time with {stylist.name}
       </button>

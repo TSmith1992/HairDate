@@ -52,12 +52,12 @@ export default function BookingTemplate({ stylist, currentUser }) {
 
   return (
     <div>
-      Set a date and time below. All appointments last for one hour
+      Set a date and time below.
       <form onSubmit={handleSubmit}>
         <p>
           <label htmlFor="date">
             When Would You Like to see {stylist.name}?
-          </label>
+          </label><br></br>
           <input
             type="date"
             name="date"
@@ -67,7 +67,7 @@ export default function BookingTemplate({ stylist, currentUser }) {
         </p>
         <p>
           <label htmlFor="start_time">
-            When Would You Like to see {stylist.name}?
+            When Would You Like to see {stylist.name}?<br></br>
           </label>
           <input
             type="time"
@@ -77,7 +77,7 @@ export default function BookingTemplate({ stylist, currentUser }) {
           />
         </p>
         <p>
-          <label htmlFor="end_time">How long will the appointment last?</label>
+          <label htmlFor="end_time">How long will the appointment last?</label><br></br>
           <input
             type="time"
             name="end_time"
