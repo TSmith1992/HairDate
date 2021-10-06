@@ -1,6 +1,7 @@
 import React from "react";
 import ClientProfileEdit from "./ClientProfileEdit";
 import StylistProfileEdit from "./StylistProfileEdit";
+import './StyledComponents/MyCSS.css'
 
 export default function ProfileEdit({ currentUser, setCurrentUser }) {
   return (

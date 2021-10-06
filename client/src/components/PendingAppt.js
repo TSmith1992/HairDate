@@ -1,4 +1,5 @@
 import React from "react";
+import './StyledComponents/MyCSS.css'
 
 export default function PendingAppt({ currentUser, appt }) {
 
@@ -24,7 +25,7 @@ export default function PendingAppt({ currentUser, appt }) {
   }
 
   return (
-    <div>
+    <div className="stylistcard">
       <p>Appt date:{appt.date}</p>
       {/* <p>
         Appt Start Time :{appt.start_time}...{startTime}

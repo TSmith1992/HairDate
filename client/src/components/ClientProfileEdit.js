@@ -61,14 +61,14 @@ function ClientProfileEdit({ setCurrentUser, currentUser }) {
     <div className="authForm">
       <form onSubmit={handleSubmit}>
         <h1>
-          Client Profile Edit. Click the Checkbox next to the editing space to
+          Click the Checkbox next to the editing space to
           keep your old data
-        </h1>
+        </h1><br></br>
         <p>
           <label htmlFor="name">
             Your current name is <strong>{currentUser.name}</strong>. Change
             that in the space provided.
-          </label>
+          </label><br></br>
           <input
             type="text"
             name="name"
@@ -83,7 +83,7 @@ function ClientProfileEdit({ setCurrentUser, currentUser }) {
           ></input>
         </p>
         <p>
-          <label htmlFor="password">Change your Password here:</label>
+          <label htmlFor="password">Change your Password here:</label><br></br>
           <input
             type="password"
             name="password"
@@ -100,7 +100,7 @@ function ClientProfileEdit({ setCurrentUser, currentUser }) {
         <p>
           <label htmlFor="password_confirmation">
             Confrim your changed password here:
-          </label>
+          </label><br></br>
           <input
             type="password"
             name="password_confirmation"
@@ -115,7 +115,7 @@ function ClientProfileEdit({ setCurrentUser, currentUser }) {
           ></input>
         </p>
         <p>
-          <label htmlFor="profile_pic">Change Your Profile Picture here:</label>
+          <label htmlFor="profile_pic">Change Your Profile Picture here:</label><br></br>
           <input
             type="profile_pic"
             name="profile_pic"
@@ -134,7 +134,7 @@ function ClientProfileEdit({ setCurrentUser, currentUser }) {
           <label htmlFor="hairstyle_pic">
             Thinking of a new 'do? Let the Stylists know what you're looking for
             here:
-          </label>
+          </label><br></br>
           <input
             type="hairstyle_pic"
             name="hairstyle_pic"
@@ -151,7 +151,7 @@ function ClientProfileEdit({ setCurrentUser, currentUser }) {
         <p>
           <label htmlFor="description">
             What would you like for your Stylist to know about you?
-          </label>
+          </label><br></br>
           <p></p>
           <textarea
             type="description"
