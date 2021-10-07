@@ -109,6 +109,10 @@
   font-size: 110%
 }
 
+img {
+  border: 5px solid #555;
+}
+
 .saloncard{
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
   padding: 9px;
@@ -129,5 +133,6 @@
   border: 5px solid #FFFF00;
   padding-bottom: 5%;
   width: 35%;
-  border-radius: 75px
+  border-radius: 75px;
+  box-sizing: border-box;
 }

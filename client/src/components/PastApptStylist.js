@@ -9,7 +9,7 @@ export default function PastAppt({ currentUser, appt }) {
 
   return (
     <div className="stylistcard">
-      <p>Appt date:{dateApt}</p>
+      <p><strong>Appt date:{dateApt}</strong></p>
       {appt.postcut_pic ? (
         <>
           <p>The Do'</p>
@@ -20,10 +20,10 @@ export default function PastAppt({ currentUser, appt }) {
             height="300px"
           />
           <p>
-            Your Review: <em>{appt.review}</em>
+            Your Review: <br></br><em><strong>{appt.review}</strong></em>
           </p>
           <p>
-            Rating: <em>{appt.rating}</em>
+            Rating: <br></br><em>{appt.rating}</em>
           </p>
         </>
       ) : (

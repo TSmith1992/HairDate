@@ -19,7 +19,7 @@ export default function PastAppt({ currentUser, appt }) {
 
   return (
     <div className="stylistcard">
-      <p>Appt date: {dateApt}</p>
+      <p><strong>Appt date: {dateApt}</strong></p>
       {appt.postcut_pic ? (
         <>
           <p>The Do'</p>
