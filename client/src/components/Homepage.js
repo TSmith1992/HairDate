@@ -3,14 +3,6 @@ import './StyledComponents/MyCSS.css'
 
 export default function Homepage({ currentUser }) {
 
-let openingHours = new Date(currentUser.salon.opening_hours);
-
-let openingHoursTranslate= openingHours.toLocaleTimeString('en-US');
-
-let closingHours = new Date(currentUser.salon.closing_hours)
-
-let closingHoursTranslate = closingHours.toLocaleTimeString('en-US');
-
   return (
     <div className="authForm">
       {console.log("current User", currentUser)}
@@ -64,8 +56,8 @@ let closingHoursTranslate = closingHours.toLocaleTimeString('en-US');
             height="300px"
           />
           <p>{currentUser.salon.address}</p>
-          <h3>Your Salon's opening hours: {openingHoursTranslate}</h3>
-          <h3>Your Salon's opening hours: {closingHoursTranslate}</h3>
+          <h3>Your Salon's opening hours: {new Date(currentUser.salon.opening_hours).toLocaleTimeString('en-US')}</h3>
+          <h3>Your Salon's opening hours: {new Date(currentUser.salon.closing_hours).toLocaleTimeString('en-US')}</h3>
           <h3>
             <em>{currentUser.salon.description}</em>
           </h3>

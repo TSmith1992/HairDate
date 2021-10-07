@@ -23,8 +23,8 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
   return (
     <div className="App">
-      <nav>
-        <span>
+      <nav className='topNav'>
+        <span className="spanNLinks">
           <NavLink to="/homepage"><button className='NavLinks'>HomePage</button></NavLink>
           <NavLink to="/profileedit"><button className='NavLinks'>Edit Your Profile!</button></NavLink>
           <NavLink to="/pastappt"><button className='NavLinks'>Past Appointments</button></NavLink>
@@ -35,7 +35,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
             <></>
           )}
         </span>
-        <span><br></br><br></br>
+        <span className="spanLogout">
           Logged in as <strong>{currentUser.name}</strong><p></p>
           <button className='logout' onClick={handleLogout}>Logout</button>
         </span>

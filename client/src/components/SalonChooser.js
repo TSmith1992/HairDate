@@ -19,7 +19,7 @@ export default function SalonChooser({ salon, currentUser }) {
         height="600px"
       />
       <p>{salon.description}</p>
-      <p>{salon.address}</p>
+      <p><strong>{salon.address}</strong></p>
       <p>Rating: {salon.stylists[0].avg_rating_salon}</p>
       <p>Opening Hours: {salonOpeningHours}</p>
       <p>Closing Hours: {salonClosingHours}</p>
@@ -27,7 +27,7 @@ export default function SalonChooser({ salon, currentUser }) {
       <button onClick={(e) => setChooseSalon(!chooseSalon)}>
         {chooseSalon ? "Hide Stylists" : "Click here to see Stylists"}
       </button>
-      {chooseSalon ? (
+      <div className='newClassName'>{chooseSalon ? (
         salon.stylists.map((stylist) => (
           <StylistChooser
             key={stylist.name}
@@ -35,9 +35,9 @@ export default function SalonChooser({ salon, currentUser }) {
             currentUser={currentUser}
           />
         ))
-      ) : (
+      ): (
         <></>
-      )}
+      )} </div>
     </div>
   );
 }

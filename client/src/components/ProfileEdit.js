@@ -6,7 +6,7 @@ import './StyledComponents/MyCSS.css'
 export default function ProfileEdit({ currentUser, setCurrentUser }) {
   return (
     <div>
-      <h1>Looking to Edit Your Profile? Do it here!</h1>
+      <h1>Looking to edit Your profile? Do it here!</h1>
       {currentUser.hairstyle_pic ? 
       <ClientProfileEdit 
       currentUser={currentUser}

@@ -78,7 +78,7 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -94,12 +94,31 @@
   border-radius: 75px
 }
 
+.topNav{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.spanNLinks{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.spanLogout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .NavLinks{
   background-color: palevioletred;
   color: black;
   border-radius: 25px;
   font-size: 110%;
   text-align: center;
+  list-style-type: none;
 }
 
 .logout{
@@ -135,4 +154,23 @@ img {
   width: 35%;
   border-radius: 75px;
   box-sizing: border-box;
+}
+
+.newClassName{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap:wrap;
+}
+
+.pending{
+  display: flex;
+  flex-direction: column;
+  align-items: inherit 
+}
+
+.pendingCard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

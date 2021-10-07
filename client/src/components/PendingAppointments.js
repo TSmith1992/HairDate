@@ -4,9 +4,9 @@ import './StyledComponents/MyCSS.css'
 
 export default function PendingAppointments({currentUser}) {
     return (
-        <div  className="container">
+        <div  className="pending">
             Find here all of your Pending Appointments!
-            {currentUser.appointments.filter(appointment => appointment.accepted !== true).map(appt => <PendingAppt appt={appt} key ={appt.id} currentUser={currentUser}/>)}
+            <div className='pendingCard'>{currentUser.appointments.filter(appointment => appointment.accepted !== true).map(appt => <PendingAppt appt={appt} key ={appt.id} currentUser={currentUser}/>)}</div>
         </div>
     )
 }
