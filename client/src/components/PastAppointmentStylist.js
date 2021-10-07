@@ -6,11 +6,11 @@ export default function PastAppointmentStylist({currentUser}) {
   return (
     <div className='container'>
       Past Appointments Page!
-      {currentUser.appointments
+      <div className='pendingCard2'>{currentUser.appointments
         .filter((appointment) => appointment.accepted)
         .map((appt) => (
           <PastApptStylist appt={appt} key={appt.id} currentUser={currentUser} />
-        ))}
+        ))}</div>
     </div>
   );
 }

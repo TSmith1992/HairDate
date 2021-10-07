@@ -4,13 +4,13 @@ import './StyledComponents/MyCSS.css'
 
 export default function PastAppointment({ currentUser }) {
   return (
-    <div className="container">
+    <div className="pending">
       Past Appointment Page!
-      {currentUser.appointments
+      <div className='pendingCard'>{currentUser.appointments
         .filter((appointment) => appointment.accepted)
         .map((appt) => (
           <PastAppt appt={appt} key={appt.id} currentUser={currentUser} />
-        ))}
+        ))}</div>
     </div>
   );
 }

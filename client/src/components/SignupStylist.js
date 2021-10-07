@@ -164,7 +164,7 @@ function SignupStylist({ setCurrentUser }) {
             )}
         </div>
 
-        <p>
+        {/* <p>
           {errors ? (
             <>
               {errors.errors.map((error) => (
@@ -176,7 +176,7 @@ function SignupStylist({ setCurrentUser }) {
           ) : (
             <></>
           )}
-        </p>
+        </p> */}
         <p>
           <button type="submit" className="login">
             Sign Up

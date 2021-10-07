@@ -36,7 +36,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
           )}
         </span>
         <span className="spanLogout">
-          Logged in as <strong>{currentUser.name}</strong><p></p>
+          Logged in as...<strong>{currentUser.name}</strong><p></p>
           <button className='logout' onClick={handleLogout}>Logout</button>
         </span>
       </nav>

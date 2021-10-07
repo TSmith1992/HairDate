@@ -15,8 +15,8 @@ export default function SalonChooser({ salon, currentUser }) {
       <img
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcFGLIb5RfMOKCK49npBM0gEANk78PtpTkHQ&usqp=CAU"
         alt="Salon"
-        width="600px"
-        height="600px"
+        width="300px"
+        height="300px"
       />
       <p>{salon.description}</p>
       <p><strong>{salon.address}</strong></p>
