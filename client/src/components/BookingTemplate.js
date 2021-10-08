@@ -13,6 +13,7 @@ export default function BookingTemplate({ stylist, currentUser }) {
       alert(
         "Hmmm...Something isn't right. Check to make sure you have chosen only ONE HOUR per appointment and that start time is before your end time"
       );
+      window.location.reload()
     } else {
       e.preventDefault();
       fetch("/appointments", {
