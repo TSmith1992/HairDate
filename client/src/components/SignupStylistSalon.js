@@ -9,7 +9,7 @@ export default function SignupStylistSalon({setSalonId, salons, setSalons}) {
             setSalons(r);
             console.log('salons are...', salons)
           });
-      }, []);
+      }, [setSalons, salons]);
 
     // setSalons(     {name:"Best Kutz Salon", 
     // address: "555 Main Street", 
