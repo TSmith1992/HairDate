@@ -34,8 +34,8 @@ export default function BookingTemplate({ stylist, currentUser }) {
             alert(
               `Thanks! We'll let ${stylist.name} know, and if accepted, you've got a booking!`
             );
+            // window.location.reload()
             history.push("/homepage");
-            window.location.reload()
           });
         } else {
           res.json().then((errors) => {

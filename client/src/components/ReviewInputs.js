@@ -29,8 +29,8 @@ export default function ReviewInputs({ currentUser, appt }) {
         });
       } else {
         res.json().then((errors) => {
-          console.log(errors);
           setErrors(errors);
+          console.log(errors);
         });
       }
     });
@@ -78,7 +78,7 @@ export default function ReviewInputs({ currentUser, appt }) {
         </p>
         <button type="submit">Submit Review</button>
         <p>
-          {errors ? (
+          {/* {errors ? (
             <>
               {errors.errors.map((error) => (
                 <strong key={error}>
@@ -88,7 +88,7 @@ export default function ReviewInputs({ currentUser, appt }) {
             </>
           ) : (
             <></>
-          )}
+          )} */}
         </p>
       </form>
     </div>
