@@ -5,9 +5,13 @@ class StylistSerializer < ActiveModel::Serializer
 
   def avg_rating
     stylist = Stylist.find_by(id: self.object.id)
-    stylist_rating_sum = stylist.appointments.map{|appointment| appointment.rating}.sum
-    stylist_rating_length = stylist.appointments.map{|appointment| appointment.rating}.length
-    stylist_rating_sum/stylist_rating_length
+    if stylist.appointments.length<1
+      avg_rating = 5
+    else
+      stylist_rating_sum = stylist.appointments.map{|appointment| appointment.rating}.sum
+      stylist_rating_length = stylist.appointments.map{|appointment| appointment.rating}.length
+      stylist_rating_sum/stylist_rating_length
+    end
   end
 
   def avg_rating_salon
